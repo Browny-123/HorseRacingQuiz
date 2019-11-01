@@ -207,7 +207,7 @@
   font-family: "Sunflower", sans-serif;
 }
 .end-game-text {
-  color: gold;
+  color: red;
   font-size: 5rem;
   width: 800px;
   margin: 0 auto;
@@ -222,5 +222,17 @@
   font-size: 1.8rem;
   font-family: "Sunflower", sans-serif;
   border-radius: 2rem;
+}
+
+.gold {
+  color: gold !important;
+}
+
+.silver {
+  color: silver !important;
+}
+
+.bronze {
+  color: #cd7f32 !important;
 }
 /* End of the CSS */

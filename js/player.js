@@ -34,7 +34,6 @@ class Computer {
       const x = this.medComp.movement.getBoundingClientRect().x;
       const w = this.medComp.movement.getBoundingClientRect().width;
       if (x + w >= containerRightPos - 53) {
-        console.log("comp", x, w, containerRightPos);
         this.medComp.finished = true;
         return clearInterval(intvl);
       }
@@ -49,7 +48,6 @@ class Computer {
       const x = this.hardComp.movement.getBoundingClientRect().x;
       const w = this.hardComp.movement.getBoundingClientRect().width;
       if (x + w >= containerRightPos - 53) {
-        console.log("comp", x, w, containerRightPos);
         this.hardComp.finished = true;
         return clearInterval(intvl);
       }

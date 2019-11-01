@@ -2,6 +2,7 @@ import Game from "../js/game.js";
 import Computer from "../js/player.js";
 
 let generalQuestions = [
+  { question: "Press enter to kick start the horse", answer: "" },
   { question: "What is the name of the German airline?", answer: "Lufthansa" },
   {
     question: "In which European city can you find the home of Anne Frank?",
@@ -41,6 +42,7 @@ let generalQuestions = [
 console.log(generalQuestions.length);
 
 let anagrams = [
+  { question: "Press enter to kick start the horse", answer: "" },
   { question: "MLTH", answer: "HTML" },
   { question: "MUSANGS", answer: "Samsung" },
   { question: "HPEON", answer: "Phone" },
@@ -124,6 +126,7 @@ function checking() {
   ) {
     togglePage();
     endGameText.textContent = "You Win and beat everyone and finished 1st!!!";
+    endGameText.classList.toggle("gold");
   } else if (
     !computer.easyComp.finished &&
     !computer.medComp.finished &&
@@ -131,6 +134,7 @@ function checking() {
   ) {
     togglePage();
     endGameText.textContent = "You finished Second!!!";
+    endGameText.classList.toggle("silver");
   } else if (
     !computer.easyComp.finished &&
     (computer.medComp.finished &&
@@ -139,6 +143,7 @@ function checking() {
   ) {
     togglePage();
     endGameText.textContent = "You finished Third!!!";
+    endGameText.classList.toggle("bronze");
   } else {
     togglePage();
     endGameText.textContent = "You Lose!!!";

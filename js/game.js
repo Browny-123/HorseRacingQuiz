@@ -3,7 +3,7 @@ class Game {
     this.questions = questions;
     this.score = 1;
     this.questionNumber = {
-      number: 2,
+      number: 1,
       doc: document.querySelector(".question-number")
     };
     this.currentQuestion;
@@ -18,11 +18,17 @@ class Game {
   }
 
   newQuestion(questionContainer) {
-    const random = Math.floor(Math.random() * this.questions.length);
-    let randomQuestion = this.questions[random];
-    let randomQuestionInfo = randomQuestion.question;
-    questionContainer.innerHTML = randomQuestionInfo;
-    this.currentQuestion = randomQuestion;
+    if (this.questionNumber.number === 1) {
+      this.currentQuestion = this.questions[0];
+      questionContainer.innerHTML = this.currentQuestion.question;
+      this.questionNumber.doc.textContent = "Start";
+    } else {
+      const random = Math.floor(Math.random() * this.questions.length);
+      let randomQuestion = this.questions[random];
+      let randomQuestionInfo = randomQuestion.question;
+      questionContainer.innerHTML = randomQuestionInfo;
+      this.currentQuestion = randomQuestion;
+    }
   }
 
   deleteQuestion() {
@@ -34,8 +40,6 @@ class Game {
     this.deleteQuestion();
     const x = this.player.movement.getBoundingClientRect().x;
     const w = this.player.movement.getBoundingClientRect().width;
-
-    console.log(x, w, this.container.borders);
     if (x + w >= this.container.borders - 100) {
       this.player.finished = true;
       clbk(this.player.finished);
