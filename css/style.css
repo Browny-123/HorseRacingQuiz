@@ -64,8 +64,9 @@
 }
 
 .start-button:hover {
-  width: 34%;
+  width: 40%;
   box-shadow: none;
+  font-size: 2.7rem;
 }
 
 /* This is the end of the Start Screen and beginning of the Main Screen */

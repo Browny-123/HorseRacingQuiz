@@ -57,6 +57,24 @@ let anagrams = [
   { question: "LSKCA", answer: "Slack" }
 ];
 
+let mathQuestions = [
+  { question: "Press enter to kick start the horse", answer: "" },
+  { question: "10 * 10", answer: "100" },
+  { question: "100 - 33", answer: "67" },
+  { question: "122 * 10", answer: "1220" },
+  { question: "7 * 10", answer: "70" },
+  { question: "11111 * 0", answer: "0" },
+  { question: "123 + 456", answer: "579" },
+  { question: "10 * 10 * 10", answer: "1000" },
+  { question: "123 - 77", answer: "46" },
+  { question: "500 / 10", answer: "50" },
+  { question: "12 + 25 + 33 + 40", answer: "110" },
+  { question: "599 + 1", answer: "600" },
+  { question: "5500 * 12", answer: "66,000" },
+  { question: "12 * 12", answer: "144" },
+  { question: "4 * 10", answer: "40" }
+];
+
 const answer = document.querySelector(".answer-input");
 const container = document.querySelector(".container");
 const question = document.querySelector(".question-information");
@@ -67,9 +85,11 @@ const mainHidden = document.querySelector(".main-game");
 const endGameHidden = document.querySelector(".end-game");
 const endGameText = document.querySelector(".end-game-text");
 const endButton = document.querySelector(".return-home");
+const startMath = document.querySelector(".maths-quiz");
 const computer = new Computer();
 let game;
 
+startMath.onclick = chooseAndStart;
 startAnagram.onclick = chooseAndStart;
 startGeneral.onclick = chooseAndStart;
 endButton.onclick = changeToMainScreen;
@@ -78,8 +98,11 @@ function chooseAndStart(e) {
   if (e.target.innerHTML === "General Quiz") {
     game = new Game(generalQuestions, container);
     startProcedure();
-  } else {
+  } else if (e.target.innerHTML === "Anagrams") {
     game = new Game(anagrams, container);
+    startProcedure();
+  } else {
+    game = new Game(mathQuestions, container);
     startProcedure();
   }
 }
