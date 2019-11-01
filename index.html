@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Horse Container Race</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" src="/js/start-game.js"></script>
+    <script type="module" src="/js/player.js"></script>
+    <script type="module" src="/js/game.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="start-screen">
+        <h1 class="title">Horse Racing Quiz</h1>
+        <h2 class="choice-heading">Choose A Quiz Type</h2>
+        <div class="choices">
+          <button class="start-button general-quiz">General Quiz</button>
+          <button class="start-button anagram-quiz">Anagrams</button>
+        </div>
+      </div>
+      <div class="main-game is-hidden">
+        <div class="game-section">
+          <div class="player one">
+            <img
+              src="http://cdn.lowgif.com/full/f2c03d2e505d1109-sprinty-steed-an-easy-to-play-horse-race-game-for-everyone-by.gif"
+              alt="animated-horse"
+              class="horse one"
+            />
+            <img
+              src="./assets/grass-png-3-transparent.png"
+              alt="grass"
+              class="grass-one"
+            />
+          </div>
+          <div class="computer one">
+            <img
+              src="http://cdn.lowgif.com/full/f2c03d2e505d1109-sprinty-steed-an-easy-to-play-horse-race-game-for-everyone-by.gif"
+              alt="animated-horse"
+              class="horse two"
+            />
+            <img
+              src="./assets/grass-png-3-transparent.png"
+              alt="grass"
+              class="grass-two"
+            />
+          </div>
+          <div class="computer two">
+            <img
+              src="http://cdn.lowgif.com/full/f2c03d2e505d1109-sprinty-steed-an-easy-to-play-horse-race-game-for-everyone-by.gif"
+              alt="animated-horse"
+              class="horse three"
+            />
+            <img
+              src="./assets/grass-png-3-transparent.png"
+              alt="grass"
+              class="grass-three"
+            />
+          </div>
+          <div class="computer three">
+            <img
+              src="http://cdn.lowgif.com/full/f2c03d2e505d1109-sprinty-steed-an-easy-to-play-horse-race-game-for-everyone-by.gif"
+              alt="animated-horse"
+              class="horse four"
+            />
+            <img
+              src="./assets/grass-png-3-transparent.png"
+              alt="grass"
+              class="grass-four"
+            />
+          </div>
+
+          <img
+            src="./assets/Black_and_white_checkered_pattern.jpg"
+            alt="Finish Line"
+            class="finish-line"
+          />
+        </div>
+        <div class="quiz-section">
+          <div class="question">
+            <h3 class="question-number">Question Number: 1</h3>
+            <p class="question-information">What is the capital of France?</p>
+          </div>
+          <div class="answer">
+            <input type="text" class="answer-input" autofocus />
+          </div>
+        </div>
+      </div>
+      <div class="end-game is-hidden">
+        <h4 class="end-game-text"></h4>
+        <button class="return-home">Return to the Main Screen</button>
+      </div>
+    </div>
+  </body>
+</html>
