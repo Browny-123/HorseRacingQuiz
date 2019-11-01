@@ -39,8 +39,6 @@ let generalQuestions = [
   }
 ];
 
-console.log(generalQuestions.length);
-
 let anagrams = [
   { question: "Press enter to kick start the horse", answer: "" },
   { question: "MLTH", answer: "HTML" },

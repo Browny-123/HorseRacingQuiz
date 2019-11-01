@@ -15,6 +15,7 @@ class Game {
       movement: document.querySelector(".horse.one"),
       finished: false
     };
+    this.answerContainer = document.querySelector(".quiz-section");
   }
 
   newQuestion(questionContainer) {
@@ -55,14 +56,39 @@ class Game {
     if (
       answer.value.toLowerCase() === this.currentQuestion.answer.toLowerCase()
     ) {
+      this.changeColorWin();
       answer.value = "";
       this.questionNumber.doc.textContent = `Question Number: ${this
         .questionNumber.number++}`;
       this.correctAnswer(clbk);
       clbk();
     } else {
-      alert("INCORRECT!!!");
+      this.changeColorLose();
     }
+  }
+
+  changeColorWin() {
+    let time = 1;
+    let winChange = setInterval(() => {
+      this.answerContainer.style.backgroundColor = "#2dc937";
+      time += 1;
+      if (time === 7) {
+        this.answerContainer.style.backgroundColor = "white";
+        return clearInterval(winChange);
+      }
+    }, 100);
+  }
+
+  changeColorLose() {
+    let time = 1;
+    let loseChange = setInterval(() => {
+      this.answerContainer.style.backgroundColor = "#cc3232";
+      time += 1;
+      if (time === 7) {
+        this.answerContainer.style.backgroundColor = "white";
+        return clearInterval(loseChange);
+      }
+    }, 100);
   }
 }
 
