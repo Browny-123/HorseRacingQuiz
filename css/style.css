@@ -60,11 +60,11 @@
   border: 3px black solid;
   box-shadow: 3px 4px black;
   text-shadow: 1px 1px grey;
-  transition: width 2s;
+  transition: 0.4s linear;
 }
 
 .start-button:hover {
-  width: 40%;
+  width: 41%;
   box-shadow: none;
   font-size: 2.7rem;
 }
