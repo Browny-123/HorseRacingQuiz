@@ -1,5 +1,5 @@
 import Game from "../js/game.js";
-import Computer from "../js/player.js";
+import Computer from "../js/computer.js";
 
 let generalQuestions = [
   { question: "Press enter to kick start the horse", answer: "" },
