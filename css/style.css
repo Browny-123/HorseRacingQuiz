@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 
-.body {
+body {
   font-size: 10px;
 }
 .container {
@@ -126,10 +126,11 @@
   text-align: center;
 }
 .answer-input {
-  width: 300px;
+  width: 350px;
   height: 75px;
   font-size: 4.3rem;
-  border: 2px dotted grey;
+  border: none;
+  border-bottom: 1px solid #595f6e;
   background: none;
   font-family: "Sunflower", sans-serif;
   color: #605858;

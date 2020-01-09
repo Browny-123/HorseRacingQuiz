@@ -50,7 +50,7 @@ let anagrams = [
   { question: "VESNE", answer: "Seven" },
   { question: "EFOCFE", answer: "Coffee" },
   { question: "TCHAW", answer: "Watch" },
-  { question: "OGLGEG", answer: "Google" },
+  { question: "ELOOGG", answer: "Google" },
   { question: "HAIRC", answer: "Chair" },
   { question: "CTRIPAJVAS", answer: "Javascript" },
   { question: "SLAGS", answer: "Glass" },
@@ -70,7 +70,7 @@ let mathQuestions = [
   { question: "500 / 10", answer: "50" },
   { question: "12 + 25 + 33 + 40", answer: "110" },
   { question: "599 + 1", answer: "600" },
-  { question: "5500 * 12", answer: "66,000" },
+  { question: "5500 * 12", answer: "66000" },
   { question: "12 * 12", answer: "144" },
   { question: "4 * 10", answer: "40" }
 ];
@@ -118,9 +118,9 @@ function startProcedure() {
   startHidden.classList.toggle("is-hidden");
   mainHidden.classList.toggle("is-hidden");
   game.newQuestion(question);
-  computer.comp1Movement(r);
-  computer.comp2Movement(r);
-  computer.comp3Movement(r);
+  computer.compMovement(r, "easyComp", 1.66);
+  computer.compMovement(r, "medComp", 2);
+  computer.compMovement(r, "hardComp", 2.5);
 }
 
 function submitAnswer() {
@@ -141,26 +141,27 @@ function changeToMainScreen() {
 function checking() {
   if (
     game.player.finished &&
-    (!computer.easyComp.finished &&
-      !computer.medComp.finished &&
-      !computer.hardComp.finished)
+    !computer.easyComp.finished &&
+    !computer.medComp.finished &&
+    !computer.hardComp.finished
   ) {
     togglePage();
-    endGameText.textContent = "You Win and beat everyone and finished 1st!!!";
+    endGameText.textContent = "You Win, beat everyone and finished 1st!!!";
     endGameText.classList.toggle("gold");
   } else if (
     !computer.easyComp.finished &&
     !computer.medComp.finished &&
-    (game.player.finished && computer.hardComp.finished)
+    game.player.finished &&
+    computer.hardComp.finished
   ) {
     togglePage();
     endGameText.textContent = "You finished Second!!!";
     endGameText.classList.toggle("silver");
   } else if (
     !computer.easyComp.finished &&
-    (computer.medComp.finished &&
-      computer.hardComp.finished &&
-      game.player.finished)
+    computer.medComp.finished &&
+    computer.hardComp.finished &&
+    game.player.finished
   ) {
     togglePage();
     endGameText.textContent = "You finished Third!!!";
